@@ -1,0 +1,66 @@
+
+<div class="mat-elevation-z8 body">
+  <div class="example-header  ed-container">
+    <mat-form-field class="ed-item">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" class="ed-container mat-table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> No.</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="fullname">
+      <mat-header-cell *matHeaderCellDef> Full Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.fullname}}</mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="telefono">
+      <mat-header-cell *matHeaderCellDef> Phone</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.telefono}}</mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="direccion">
+      <mat-header-cell *matHeaderCellDef> Address</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.direccion}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="di">
+      <mat-header-cell *matHeaderCellDef> Document</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.di}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="image_url">
+      <mat-header-cell *matHeaderCellDef> Image</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.image_url}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <mat-header-cell *matHeaderCellDef> Created</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.created_at}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="updated_at">
+      <mat-header-cell *matHeaderCellDef> Updated</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.updated_at}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+<button mat-fab style="position: absolute;right: 5%;bottom: 5%;" (click)="openDialogNewUser()"><mat-icon>add</mat-icon></button>

@@ -1,0 +1,29 @@
+<div class="body ed-container" style="max-width: 100%">
+  <div class="ed-item l-70" style="background: steelblue">
+
+  </div>
+  <div class="ed-item l-30">
+    <div class="vertical-center">
+      <div class="login" style="max-width: 20rem">
+        <div class="login__img">
+          <img src="./assets/logo.jpg" alt="">
+        </div>
+        <div class="login__form">
+          <mat-form-field class="block">
+            <input matInput placeholder="Email" [(ngModel)]="login.email">
+          </mat-form-field>
+          <mat-form-field class="block">
+            <input matInput #p type="password" placeholder="Password" [(ngModel)]="login.password"/>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="p.getAttribute('type') == 'password'?p.setAttribute('type','text'):p.setAttribute('type','password')">
+              <mat-icon>remove_red_eye</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-slide-toggle style="margin-bottom: 1rem">Guardar email y password?</mat-slide-toggle>
+          <button mat-raised-button class="block" color="accent" (click)="onSubmit()">Sign In</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

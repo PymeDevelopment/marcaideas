@@ -1,0 +1,18 @@
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item routerLink="/admin/dashboard">Dasboard</button>
+  <button mat-menu-item routerLink="/admin/users">Users</button>
+  <button mat-menu-item (click)="cerrarSesion()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-menu>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <mat-toolbar-row>
+    <span>MarcaIdeas</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
